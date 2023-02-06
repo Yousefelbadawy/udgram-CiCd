@@ -1,0 +1,6 @@
+branch-defaults:
+  default:
+    environment: udgram-api-new-dev
+    group_suffix: null
+deploy:
+  artifact: www/Archive.zip
