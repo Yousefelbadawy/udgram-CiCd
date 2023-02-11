@@ -7,3 +7,5 @@ export AWS_REGION=us-east-1
 export AWS_PROFILE=default
 export JWT_SECRET=mysecretstring
 export URL=http://localhost:8100
+export AWS_ACCESS_KEY_ID=AKIA5GH5TSGEFN4YUHHC
+export AWS_SECRET_ACCESS_KEY=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
