@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "",
   "engines": {
-    "node": "14.15.0"
+    "node": "16.4.0"
   },
   "main": "src/server.ts",
   "scripts": {
@@ -12,7 +12,7 @@
     "dev": "npx ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build  && eb list && eb use udgram-api-new-dev && eb setenv POSTGRES_USERNAME=postgres POSTGRES_PASSWORD=postgres POSTGRES_DB=postgres_db PORT=3000 DB_PORT=5432 POSTGRES_HOST=database-1.cda6ek7wcfhz.us-east-1.rds.amazonaws.com JWT_SECRET=mysecret AWS_DEFAULT_REGION=us-east-1  AWS_SECRET_ACCESS_KEY=nZq+erH9TI9FNnxdVYajcimJihIGu+G5EXGQtixT AWS_ACCESS_KEY_ID=AKIA5GH5TSGEFN4YUHHC && eb deploy && ls -a",
+    "deploy": "chmod a+x set_env.sh && ./set_env.sh && npm run build  && eb list && eb use udgram-api-dev && eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB PORT=$PORT DB_PORT=$DB_PORT POSTGRES_HOST=$POSTGRES_HOST JWT_SECRET=$JWT_SECRET AWS_DEFAULT_REGION=us-east-1  AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID && eb deploy && ls -a",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
