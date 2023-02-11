@@ -1,8 +1,8 @@
 version: 2.1
 filters:
-      branches:
-        only:
-          - main
+  branches:
+    only:
+      - main
 orbs:
   # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
   node: circleci/node@5.0.2
@@ -11,7 +11,6 @@ orbs:
   # different jobs are calles later in the workflows sections
 jobs:
   build:
-          
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/node:14.15"
@@ -41,11 +40,6 @@ jobs:
           command: |
             npm run api:build
       - run:
-          name: Deploy Backend
-          command: |
-            npm run api:deploy
-
-      - run:
           name: installing Frontend Dependencies
           command: |
             npm run frontend:install
@@ -53,3 +47,8 @@ jobs:
           name: Frontend Deploy
           command: |
             npm run frontend:deploy
+
+      - run:
+          name: Deploy Backend
+          command: |
+            npm run api:deploy
