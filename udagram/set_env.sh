@@ -1,12 +1,12 @@
 export POSTGRES_USERNAME=postgres
 export POSTGRES_PASSWORD=postgres
-export POSTGRES_HOST=database-1.cda6ek7wcfhz.us-east-1.rds.amazonaws.com
+export POSTGRES_HOST=database-1.c9gzknedmwro.us-east-1.rds.amazonaws.com
 export POSTGRES_DB=postgres
 export AWS_BUCKET=arn:aws:s3:::udgram-front
 export AWS_REGION=us-east-1
 export AWS_PROFILE=default
 export JWT_SECRET=mysecretstring
 export URL=http://localhost:8100
-export AWS_ACCESS_KEY_ID=AKIA5GH5TSGEFN4YUHHC
-export AWS_SECRET_ACCESS_KEY=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
+export AWS_ACCESS_KEY_ID=AKIAY5BX7CUYRXKCMIUA
+export AWS_SECRET_ACCESS_KEY=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
 export AWS_DEFAULT_REGION=us-east-1
